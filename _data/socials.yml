@@ -20,7 +20,7 @@ github_username: agr78 # your GitHub user name
 # lastfm_id: # your lastfm id
 # lattes_id: # your ID on Lattes (Brazilian Lattes CV)
 # leetcode_id: # your LeetCode id
-# linkedin_username: # your LinkedIn user name
+linkedin_username: alexandragroberts # your LinkedIn user name
 # mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 # medium_username: # your Medium username
 orcid_id: 0000-0002-4000-2102 # your ORCID ID
@@ -28,7 +28,7 @@ orcid_id: 0000-0002-4000-2102 # your ORCID ID
 # pinterest_id: # your pinterest id
 # publons_id: # your ID on Publons
 # quora_username: # your Quora username
-# research_gate_profile: # your profile on ResearchGate
+research_gate_profile: Alexandra-Roberts-8 # your profile on ResearchGate
 # rss_icon: false # set to true to show the RSS icon
 scholar_userid: zH_SGikAAAAJ # your Google Scholar ID
 # scopus_id: # your profile on Scopus
