@@ -435,11 +435,25 @@ ninja.data = [{
           window.open("https://github.com/agr78", "_blank");
         },
       },{
+        id: 'social-linkedin',
+        title: 'LinkedIn',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.linkedin.com/in/alexandragroberts", "_blank");
+        },
+      },{
         id: 'social-orcid',
         title: 'ORCID',
         section: 'Socials',
         handler: () => {
           window.open("https://orcid.org/0000-0002-4000-2102", "_blank");
+        },
+      },{
+        id: 'social-researchgate',
+        title: 'ResearchGate',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.researchgate.net/profile/Alexandra-Roberts-8/", "_blank");
         },
       },{
         id: 'social-scholar',
