@@ -21,5 +21,6 @@ quantitative magnetic resonance imaging.
 
 Contact: <br>
 [MRI Research Institute](https://radiology.weill.cornell.edu/research/mri-research-institute-mriri)
-<br> Weill Cornell Medicine <br> 407 East 61st Street <br> New York, NY 10065
+<br> [Weill Cornell Medicine](https://research.weill.cornell.edu/)
+<br> 407 East 61st Street <br> New York, NY 10065
 <br>
