@@ -13,7 +13,6 @@ news: false # includes a list of news items
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
-<meta name="google-site-verification" content="-2Lel70fQerU08j-3YOPwV_qUoQZ6miujHmWIE8PFew" /> <br>
 
 Electrical engineering PhD candidate in
 [Yi Wang's](https://radiology.weill.cornell.edu/research/mri-research-institute-mriri/yi-wang-laboratory)
