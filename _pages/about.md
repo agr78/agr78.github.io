@@ -10,7 +10,6 @@ profile:
   image_circular: true # crops the image to make it circular
 
 contact:
-    align: left
     <p>MRI Research Institute</p>
     <p>407 East 61st Street</p>
     <p>New York, NY 10065</p>
