@@ -382,7 +382,10 @@ ninja.data = [{
           window.location.href = "/blog/2015/formatting-and-links/";
         
       },
-    },{id: "projects-project-1",
+    },{id: "news-alexandragrob-presented-her-abstract-amp-quot-toward-parkinsons-disease-deep-brain-stimulation-outcome-prediction-using-quantitative-susceptibility-mapping-radiomics-amp-quot-at-the-xx-world-congress-for-stereotactic-amp-amp-functional-neurosurgery-in-chicago-this-week-congrats-ali-wssfn2024-pic-twitter-com-th1setsdjr-amp-mdash-weill-cornell-medicine-radiology-wcmradiology-september-6-2024",
+          title: '🧠@AlexandraGRob presented her abstract, &amp;amp;quot;Toward #Parkinsons Disease Deep Brain Stimulation Outcome Prediction Using...',
+          description: "",
+          section: "News",},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
