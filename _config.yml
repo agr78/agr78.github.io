@@ -147,10 +147,10 @@ collections:
     defaults:
       layout: post
     output: true
-    permalink: /:collection/:title/
+    #permalink: /:collection/:title/
   projects:
     output: false
-    permalink: /:collection/:title/
+    #permalink: /:collection/:title/
 
 announcements:
   enabled: true
