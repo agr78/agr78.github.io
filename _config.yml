@@ -10,9 +10,8 @@ contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
   "PhD Candidate in Electrical and Computer Engineering at Cornell University"
 job_title: "PhD Candidate in Electrical and Computer Engineering at Cornell University"
-works_for: 
-  - "Cornell University"
-  - "Weill Cornell Medicine MRI Research Institute"
+affiliation: "Cornell University"
+works_for: "Cornell University"
 same_as: 
   - "https://scholar.google.com/citations?user=zH_SGikAAAAJ&hl"
   - "https://orcid.org/0000-0002-4000-2102"
