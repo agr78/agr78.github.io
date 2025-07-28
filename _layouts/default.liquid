@@ -17,24 +17,24 @@
     {
       "@context": "https://schema.org",
       "@type": "Person",
-      "name": "{{ site.author.name }}",
+      "name": "{{ site.name }}",
       "url": "{{ site.url }}{{ site.baseurl }}",
-      "jobTitle": "{{ site.author.job_title }}",
+      "jobTitle": "{{ site.job_title }}",
       "affiliation": {
         "@type": "Organization",
-        "name": "{{ site.author.affiliation }}"
+        "name": "{{ site.affiliation }}"
       },
       "sameAs": [
-        {% for link in site.author.same_as %}
+        {% for link in site.same_as %}
           "{{ link }}"{% unless forloop.last %},{% endunless %}
         {% endfor %}
       ],
       "worksFor": {
         "@type": "Organization",
-        "name": "{{ site.author.works_for }}"
+        "name": "{{ site.works_for }}"
       },
       "knowsAbout": [
-        {% for topic in site.author.knows_about %}
+        {% for topic in site.knows_about %}
           "{{ topic }}"{% unless forloop.last %},{% endunless %}
         {% endfor %}
       ]
