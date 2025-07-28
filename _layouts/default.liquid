@@ -13,6 +13,33 @@
       <meta http-equiv="refresh" content="3; url={{ redirect }}">
     {% endif %}
     {% include head.liquid %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "{{ site.author.name }}",
+      "url": "{{ site.url }}{{ site.baseurl }}",
+      "jobTitle": "{{ site.author.job_title }}",
+      "affiliation": {
+        "@type": "Organization",
+        "name": "{{ site.author.affiliation }}"
+      },
+      "sameAs": [
+        {% for link in site.author.same_as %}
+          "{{ link }}"{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "{{ site.author.works_for }}"
+      },
+      "knowsAbout": [
+        {% for topic in site.author.knows_about %}
+          "{{ topic }}"{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ]
+    }
+    </script>
   </head>
 
   <!-- Body -->
