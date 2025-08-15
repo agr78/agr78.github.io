@@ -5,7 +5,6 @@
 # acm_id: # your dl.acm.org/profile/id
 # blogger_url: # your blogger URL
 # bluesky_url: # your bluesky URL
-dblp_url: https://dblp.org/pid/408/9530 # your DBLP profile url
 # discord_id: # your discord id (18-digit unique numerical identifier)
 email: agr78@cornell.edu # your email address
 # facebook_id: # your facebook id
@@ -20,6 +19,7 @@ github_username: agr78 # your GitHub user name
 # lastfm_id: # your lastfm id
 # lattes_id: # your ID on Lattes (Brazilian Lattes CV)
 # leetcode_id: # your LeetCode id
+dblp_url: https://dblp.org/pid/408/9530 # your DBLP profile url
 linkedin_username: alexandragroberts # your LinkedIn user name
 # mastodon_username: # your mastodon instance+username in the format instance.tld/@username
 # medium_username: # your Medium username
