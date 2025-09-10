@@ -2,6 +2,7 @@
 <html lang="{{ site.lang }}">
   <!-- Head -->
   <head>
+    {% seo %}
     {% if page.redirect %}
       {% if page.redirect == true %}
         {% assign redirect = site.baseurl | append: '/' %}
