@@ -24,10 +24,7 @@ module ExternalPosts
 
     def fetch_from_rss(site, src)
       xml = HTTParty.get(src['rss_url']).body
-      if xml.nil?
-        Jekyll.logger.warn "Skipping feed #{src['rss_url']}: empty response"
-        return
-      end
+      return if xml.nil?
 
       begin
         feed = Feedjira.parse(xml)
@@ -36,11 +33,7 @@ module ExternalPosts
         return
       end
 
-      if feed && feed.entries.any?
-        process_entries(site, src, feed.entries)
-      else
-        Jekyll.logger.warn "No entries found in feed #{src['rss_url']}"
-      end
+      process_entries(site, src, feed.entries)
     end
 
     def process_entries(site, src, entries)
