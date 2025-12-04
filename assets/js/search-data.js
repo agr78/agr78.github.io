@@ -484,7 +484,7 @@ ninja.data = [{
         title: 'YouTube',
         section: 'Socials',
         handler: () => {
-          window.open("https://youtube.com/@youtube.com/@AlexandraGRoberts", "_blank");
+          window.open("https://youtube.com/@AlexandraGRoberts", "_blank");
         },
       },{
       id: 'light-theme',
