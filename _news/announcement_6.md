@@ -21,40 +21,43 @@ related_posts: false
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 --->
-<div id="tweet-container" style="max-width: 547px; margin: 2rem auto; min-height: 400px;">
-  <blockquote class="twitter-tweet">
-    <a href="https://twitter.com/opencvlive/status/1991535528739762456"></a>
-  </blockquote>
-</div>
+<div id="tweet-container" style="max-width: 547px; margin: 2rem auto; min-height: 450px;">
+  </div>
 
 <script>
-  function loadTwitter() {
-    // 1. Check if the site is currently in Dark Mode
-    // We check the 'data-theme' attribute or the system preference
-    const isDark = document.documentElement.getAttribute('data-theme') === 'dark' || 
+  function updateTwitterTheme() {
+    const html = document.documentElement;
+    const body = document.body;
+    
+    // Check all common ways Jekyll themes signal Dark Mode
+    const isDark = html.getAttribute('data-theme') === 'dark' || 
+                   html.classList.contains('dark') || 
+                   body.classList.contains('dark-mode') ||
                    window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-    // 2. Clear the container to prevent double-loading
     const container = document.getElementById('tweet-container');
-    container.innerHTML = `<blockquote class="twitter-tweet" data-theme="${isDark ? 'dark' : 'light'}">
-      <a href="https://twitter.com/opencvlive/status/1991535528739762456"></a>
-    </blockquote>`;
+    
+    // Clear and Re-inject the blockquote with the correct theme
+    container.innerHTML = `
+      <blockquote class="twitter-tweet" data-theme="${isDark ? 'dark' : 'light'}">
+        <a href="https://twitter.com/opencvlive/status/1991535528739762456"></a>
+      </blockquote>`;
 
-    // 3. Load/Reload the Twitter widget script
-    const script = document.createElement('script');
-    script.src = "https://platform.twitter.com/widgets.js";
-    script.async = true;
-    document.body.appendChild(script);
+    // Re-run the Twitter widget factory
+    if (window.twttr && window.twttr.widgets) {
+      window.twttr.widgets.load(container);
+    } else {
+      const script = document.createElement('script');
+      script.src = "https://platform.twitter.com/widgets.js";
+      document.head.appendChild(script);
+    }
   }
 
-  // Run on page load
-  loadTwitter();
+  // Run on initial load
+  setTimeout(updateTwitterTheme, 500); 
 
-  // Run whenever the user toggles the theme button on your site
-  const observer = new MutationObserver((mutations) => {
-    mutations.forEach((mutation) => {
-      if (mutation.attributeName === 'data-theme') loadTwitter();
-    });
-  });
+  // Toggle
+  const observer = new MutationObserver(updateTwitterTheme);
   observer.observe(document.documentElement, { attributes: true });
+  observer.observe(document.body, { attributes: true });
 </script>
