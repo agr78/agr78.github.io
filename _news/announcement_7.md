@@ -30,8 +30,6 @@ iframe.allowFullscreen = true;
 
 // adjust height for mobile vs desktop
 iframe.style.height = isMobile ? "900px" : "700px";
-iframe.style.filter = "invert(90%) hue-rotate(180deg)";
-iframe.style.borderRadius = "10px";
 if (!isMobile) {
   // compute left offset dynamically
   const containerWidth = container.offsetWidth; // outer container width
