@@ -476,6 +476,13 @@ ninja.data = [{
           window.open("https://scholar.google.com/citations?user=zH_SGikAAAAJ", "_blank");
         },
       },{
+        id: 'social-semanticscholar',
+        title: 'Semantic Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://www.semanticscholar.org/author/2204664244", "_blank");
+        },
+      },{
         id: 'social-x',
         title: 'X',
         section: 'Socials',
