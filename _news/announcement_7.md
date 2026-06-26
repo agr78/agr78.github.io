@@ -5,50 +5,67 @@ inline: true
 related_posts: false
 ---
 
-<!--- <div style="width:100%; margin:2rem 0; padding:0;">
-  <div style="max-width:547px; margin:0 auto; position:relative; padding-bottom:100%; height:0; overflow:hidden; border:0; outline:none; transform: translateX(-80.5px);">
-    <iframe
-      src="https://www.linkedin.com/embed/feed/update/urn:li:share:7441840420986224640"
-      style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; outline:none;"
-      allowfullscreen
-      title="LinkedIn post">
-    </iframe>
-  </div>
-</div> --->
-<div id="linkedin-container" style="max-width:547px; margin:2rem auto;"></div>
+<!-- 
+  WRAPPER: Standardized width (548px) to hide the 2px side borders.
+  Overflow: hidden crops BOTH the side borders and the bottom dead space.
+-->
+<div id="news-card-wrapper-mar25" style="
+    max-width: 548px; 
+    margin: 2rem auto; 
+    background: transparent; 
+    overflow: hidden; 
+    border-radius: 8px;
+    border: 1px solid #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+">
+    <div id="linkedin-container-mar25" style="position: relative; width: 552px; left: -2px;"></div>
+</div>
 
 <script>
-const container = document.getElementById('linkedin-container');
-const isMobile = window.innerWidth <= 600;
+(function() {
+  const container = document.getElementById('linkedin-container-mar25');
+  const wrapper = document.getElementById('news-card-wrapper-mar25');
+  const isMobile = window.innerWidth <= 600;
 
-const iframe = document.createElement('iframe');
-iframe.src = "https://www.linkedin.com/embed/feed/update/urn:li:share:7441840420986224640";
-iframe.style.width = "100%";
-iframe.style.border = "0";
-iframe.style.display = "block";
-iframe.allowFullscreen = true;
+  const iframe = document.createElement('iframe');
+  // LinkedIn Share Embed Link for Mar 25 post
+  iframe.src = "https://www.linkedin.com/embed/feed/update/urn:li:share:7441840420986224640";
+  
+  // Set iframe height significantly taller than the post to prevent internal scrollbars
+  iframe.style.width = "552px"; 
+  iframe.style.height = "1100px"; 
+  iframe.style.border = "none";
+  iframe.style.display = "block";
+  iframe.allowFullscreen = true;
 
-// adjust height for mobile vs desktop
-iframe.style.height = isMobile ? "900px" : "700px";
-if (!isMobile) {
-  // compute left offset dynamically
-  const containerWidth = container.offsetWidth; // outer container width
-  const postWidth = 547; // LinkedIn internal post width
-  const leftOffset = (containerWidth - postWidth) / 2 * -1; // negative shift to center
+  /* 
+     VISUAL HEIGHT (The "Crop"): 
+     This post is text-heavy, so it needs more height than the May 16th post.
+     760px removes the bottom dead space perfectly for this content.
+  */
+  const visibleHeight = isMobile ? 1000 : 678;
+  wrapper.style.height = visibleHeight + "px";
 
-  iframe.style.position = "relative";
-  iframe.style.left = `${leftOffset}px`;
-}
+  container.appendChild(iframe);
 
-// append iframe
-container.appendChild(iframe);
-
-// optional: recompute offset on resize
-window.addEventListener('resize', () => {
-  if (!isMobile) {
-    const containerWidth = container.offsetWidth;
-    const leftOffset = (containerWidth - 547) / 2 * -1;
-    iframe.style.left = `${leftOffset}px`;
+  function adjustAlignment() {
+    if (window.innerWidth > 600) {
+        // Desktop: Perfect side-crop
+        container.style.left = "-2px"; 
+        container.style.transform = "none";
+        wrapper.style.height = visibleHeight + "px";
+    } else {
+        // Mobile: Fluid scaling
+        const scale = wrapper.offsetWidth / 552;
+        container.style.transform = `scale(${scale})`;
+        container.style.transformOrigin = "top left";
+        container.style.left = "0";
+        // Scale the height to keep the bottom crop tight on mobile
+        wrapper.style.height = (visibleHeight * scale) + "px";
+    }
   }
-});
+
+  adjustAlignment();
+  window.addEventListener('resize', adjustAlignment);
+})();
 </script>
