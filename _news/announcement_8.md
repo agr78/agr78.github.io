@@ -42,7 +42,7 @@ related_posts: false
   function adjustAlignment() {
     if (window.innerWidth > 600) {
         // Restore the crop
-        container.style.left = "-2px"; 
+        container.style.left = "-4px"; 
         container.style.transform = "none";
         wrapper.style.height = visibleHeight + "px";
     } else {
