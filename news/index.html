@@ -67,40 +67,95 @@
       ]
     }
     </script> <title>news | blank</title> <meta name="generator" content="Jekyll v4.4.1"> <meta property="og:title" content="news"> <meta property="og:locale" content="en"> <meta name="description" content="“PhD Candidate in Electrical and Computer Engineering at Cornell University”"> <meta name="twitter:description" property="og:description" content="“PhD Candidate in Electrical and Computer Engineering at Cornell University”"> <link rel="canonical" href="https://alexandragroberts.com/news/"> <meta property="og:url" content="https://alexandragroberts.com/news/"> <meta property="og:site_name" content="blank"> <meta property="og:type" content="website"> <meta name="twitter:card" content="summary"> <meta name="twitter:title" content="news"> <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"“PhD Candidate in Electrical and Computer Engineering at Cornell University”","headline":"news","url":"https://alexandragroberts.com/news/"}</script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Alexandra</span> G. Roberts </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/_pages/repositories/">repositories </a> </li> <li class="nav-item "> <a class="nav-link" href="/assets/pdf/example_pdf.pdf">cv </a> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">news</h1> <p class="post-description"></p> </header> <article> <div class="news"> <div class="table-responsive"> <table class="table table-sm table-borderless"> <tr> <th scope="row" style="width: 20%">Mar 25, 2026</th> <td> <div id="linkedin-container" style="max-width:547px; margin:2rem auto;"></div> <script>
-const container = document.getElementById('linkedin-container');
-const isMobile = window.innerWidth <= 600;
+{"@context":"https://schema.org","@type":"WebPage","description":"“PhD Candidate in Electrical and Computer Engineering at Cornell University”","headline":"news","url":"https://alexandragroberts.com/news/"}</script> </head> <body class="fixed-top-nav "> <header> <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top" role="navigation"> <div class="container"> <a class="navbar-brand title font-weight-lighter" href="/"> <span class="font-weight-bold">Alexandra</span> G. Roberts </a> <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar top-bar"></span> <span class="icon-bar middle-bar"></span> <span class="icon-bar bottom-bar"></span> </button> <div class="collapse navbar-collapse text-right" id="navbarNav"> <ul class="navbar-nav ml-auto flex-nowrap"> <li class="nav-item "> <a class="nav-link" href="/">about </a> </li> <li class="nav-item "> <a class="nav-link" href="/publications/">publications </a> </li> <li class="nav-item active"> <a class="nav-link" href="/_pages/repositories/">repositories </a> </li> <li class="nav-item "> <a class="nav-link" href="/assets/pdf/example_pdf.pdf">cv </a> </li> <li class="toggle-container"> <button id="light-toggle" title="Change theme"> <i class="ti ti-sun-moon" id="light-toggle-system"></i> <i class="ti ti-moon-filled" id="light-toggle-dark"></i> <i class="ti ti-sun-filled" id="light-toggle-light"></i> </button> </li> </ul> </div> </div> </nav> <progress id="progress" value="0"> <div class="progress-container"> <span class="progress-bar"></span> </div> </progress> </header> <div class="container mt-5" role="main"> <div class="post"> <header class="post-header"> <h1 class="post-title">news</h1> <p class="post-description"></p> </header> <article> <div class="news"> <div class="table-responsive"> <table class="table table-sm table-borderless"> <tr> <th scope="row" style="width: 20%">May 16, 2026</th> <td> <div id="news-card-wrapper-8" style=" max-width: 548px; margin: 2rem auto; background: transparent; overflow: hidden; border-radius: 8px; border: 1px solid #333; box-shadow: 0 4px 12px rgba(0,0,0,0.3); "> <div id="linkedin-container-8" style="position: relative; width: 552px; left: -2px;"></div> </div> <script>
+(function() {
+  const container = document.getElementById('linkedin-container-8');
+  const wrapper = document.getElementById('news-card-wrapper-8');
+  const isMobile = window.innerWidth <= 600;
 
-const iframe = document.createElement('iframe');
-iframe.src = "https://www.linkedin.com/embed/feed/update/urn:li:share:7441840420986224640";
-iframe.style.width = "100%";
-iframe.style.border = "0";
-iframe.style.display = "block";
-iframe.allowFullscreen = true;
+  const iframe = document.createElement('iframe');
+  iframe.src = "https://www.linkedin.com/embed/feed/update/urn:li:activity:7458501029249175552";
+  
+  // Keep the iframe's internal width/height fixed to prevent scrollbars
+  iframe.style.width = "552px"; 
+  iframe.style.height = "800px"; 
+  iframe.style.display = "block";
+  
+  /* 
+     VISUAL HEIGHT
+  */
+  const visibleHeight = isMobile ? 750 : 645;
+  wrapper.style.height = visibleHeight + "px";
 
-// adjust height for mobile vs desktop
-iframe.style.height = isMobile ? "900px" : "700px";
-if (!isMobile) {
-  // compute left offset dynamically
-  const containerWidth = container.offsetWidth; // outer container width
-  const postWidth = 547; // LinkedIn internal post width
-  const leftOffset = (containerWidth - postWidth) / 2 * -1; // negative shift to center
+  container.appendChild(iframe);
 
-  iframe.style.position = "relative";
-  iframe.style.left = `${leftOffset}px`;
-}
-
-// append iframe
-container.appendChild(iframe);
-
-// optional: recompute offset on resize
-window.addEventListener('resize', () => {
-  if (!isMobile) {
-    const containerWidth = container.offsetWidth;
-    const leftOffset = (containerWidth - 547) / 2 * -1;
-    iframe.style.left = `${leftOffset}px`;
+  function adjustAlignment() {
+    if (window.innerWidth > 600) {
+        // Restore the crop
+        container.style.left = "-2px"; 
+        container.style.transform = "none";
+        wrapper.style.height = visibleHeight + "px";
+    } else {
+        // Mobile fluid scaling
+        const scale = wrapper.offsetWidth / 552;
+        container.style.transform = `scale(${scale})`;
+        container.style.transformOrigin = "top left";
+        container.style.left = "0";
+        // Scale the height perfectly to match
+        wrapper.style.height = (visibleHeight * scale) + "px";
+    }
   }
-});
+
+  adjustAlignment();
+  window.addEventListener('resize', adjustAlignment);
+})();
+</script> </td> </tr> <tr> <th scope="row" style="width: 20%">Mar 25, 2026</th> <td> <div id="news-card-wrapper-mar25" style=" max-width: 548px; margin: 2rem auto; background: transparent; overflow: hidden; border-radius: 8px; border: 1px solid #333; box-shadow: 0 4px 12px rgba(0,0,0,0.3); "> <div id="linkedin-container-mar25" style="position: relative; width: 552px; left: -2px;"></div> </div> <script>
+(function() {
+  const container = document.getElementById('linkedin-container-mar25');
+  const wrapper = document.getElementById('news-card-wrapper-mar25');
+  const isMobile = window.innerWidth <= 600;
+
+  const iframe = document.createElement('iframe');
+  // LinkedIn Share Embed Link for Mar 25 post
+  iframe.src = "https://www.linkedin.com/embed/feed/update/urn:li:share:7441840420986224640";
+  
+  // Set iframe height significantly taller than the post to prevent internal scrollbars
+  iframe.style.width = "552px"; 
+  iframe.style.height = "1100px"; 
+  iframe.style.border = "none";
+  iframe.style.display = "block";
+  iframe.allowFullscreen = true;
+
+  /* 
+     VISUAL HEIGHT (The "Crop"): 
+     This post is text-heavy, so it needs more height than the May 16th post.
+     760px removes the bottom dead space perfectly for this content.
+  */
+  const visibleHeight = isMobile ? 1000 : 678;
+  wrapper.style.height = visibleHeight + "px";
+
+  container.appendChild(iframe);
+
+  function adjustAlignment() {
+    if (window.innerWidth > 600) {
+        // Desktop: Perfect side-crop
+        container.style.left = "-2px"; 
+        container.style.transform = "none";
+        wrapper.style.height = visibleHeight + "px";
+    } else {
+        // Mobile: Fluid scaling
+        const scale = wrapper.offsetWidth / 552;
+        container.style.transform = `scale(${scale})`;
+        container.style.transformOrigin = "top left";
+        container.style.left = "0";
+        // Scale the height to keep the bottom crop tight on mobile
+        wrapper.style.height = (visibleHeight * scale) + "px";
+    }
+  }
+
+  adjustAlignment();
+  window.addEventListener('resize', adjustAlignment);
+})();
 </script> </td> </tr> <tr> <th scope="row" style="width: 20%">Nov 20, 2025</th> <td> <div id="tweet-container" style="max-width: 547px; margin: 2rem auto; min-height: 450px;"> </div> <script>
   function updateTwitterTheme() {
     const html = document.documentElement;
