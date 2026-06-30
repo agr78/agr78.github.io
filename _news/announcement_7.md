@@ -35,7 +35,7 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; }
   const isChromeOrFirefoxOniOS = /CriOS|FxiOS/.test(ua);
   const isMobileSafari = isIOS && !isChromeOrFirefoxOniOS;
 
-  const MOBILE_CROP_RATIO = isMobileSafari ? 0.65 : 0.615;
+  const MOBILE_CROP_RATIO = isMobileSafari ? 0.70 : 0.615;
 
   function adjust7() {
     const ww = wrapper.clientWidth;
