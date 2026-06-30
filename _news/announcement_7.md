@@ -15,7 +15,6 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; }
   container.style.position = 'relative';
   container.style.overflow = 'hidden';
   wrapper.appendChild(container);
-
   const iframe = document.createElement('iframe');
   iframe.src = "https://www.linkedin.com/embed/feed/update/urn:li:share:7441840420986224640";
   iframe.setAttribute('scrolling', 'no');
@@ -25,11 +24,18 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; }
   iframe.style.display = "block";
   iframe.style.transformOrigin = "top left";
   container.appendChild(iframe);
-
   const IFRAME_W = 552;
   const IFRAME_H = 1100;
   const DESKTOP_CROP_H = 678;
-  const MOBILE_CROP_RATIO = 0.615;
+
+  // Detect real mobile Safari (iOS WebKit), excluding Chrome/Firefox on iOS
+  // which report Safari-like UA strings but identify via CriOS/FxiOS.
+  const ua = navigator.userAgent;
+  const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+  const isChromeOrFirefoxOniOS = /CriOS|FxiOS/.test(ua);
+  const isMobileSafari = isIOS && !isChromeOrFirefoxOniOS;
+
+  const MOBILE_CROP_RATIO = isMobileSafari ? 0.75 : 0.615;
 
   function adjust7() {
     const ww = wrapper.clientWidth;
@@ -50,7 +56,6 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; }
       wrapper.style.height = scaledCropH + "px";
     }
   }
-
   window.addEventListener('load', adjust7);
   window.addEventListener('resize', adjust7);
   adjust7();

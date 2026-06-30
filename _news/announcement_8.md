@@ -15,7 +15,6 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; }
   container.style.position = 'relative';
   container.style.overflow = 'hidden';
   wrapper.appendChild(container);
-
   const iframe = document.createElement('iframe');
   iframe.src = "https://www.linkedin.com/embed/feed/update/urn:li:activity:7458501029249175552";
   iframe.setAttribute('scrolling', 'no');
@@ -28,15 +27,18 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; }
   iframe.style.left = "0";
   iframe.style.transformOrigin = "top left";
   container.appendChild(iframe);
-
   const IFRAME_W = 552;
   const IFRAME_H = 800;
   const DESKTOP_CROP_H = 645;
-  const MOBILE_CROP_RATIO = 0.80;
-  // The white strip is ~2-3px of real iframe width on the right edge.
-  // We make the CONTAINER narrower than the full scaled iframe width,
-  // so its overflow:hidden clips that strip off.
-  const RIGHT_TRIM_PX = 4; // real iframe pixels to trim off the right edge
+  const RIGHT_TRIM_PX = 4;
+
+  // Detect real mobile Safari (iOS WebKit), excluding Chrome/Firefox on iOS
+  const ua = navigator.userAgent;
+  const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
+  const isChromeOrFirefoxOniOS = /CriOS|FxiOS/.test(ua);
+  const isMobileSafari = isIOS && !isChromeOrFirefoxOniOS;
+
+  const MOBILE_CROP_RATIO = isMobileSafari ? 0.92 : 0.80;
 
   function adjust8() {
     const ww = wrapper.clientWidth;
@@ -57,7 +59,6 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; }
       wrapper.style.height = scaledCropH + "px";
     }
   }
-
   window.addEventListener('load', adjust8);
   window.addEventListener('resize', adjust8);
   adjust8();
