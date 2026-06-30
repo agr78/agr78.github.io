@@ -26,22 +26,28 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; }
   iframe.style.transformOrigin = "top left";
   container.appendChild(iframe);
 
+  const IFRAME_W = 552;
+  const IFRAME_H = 1100;
+  const DESKTOP_CROP_H = 678;
+  const MOBILE_CROP_RATIO = 0.615;
+
   function adjust7() {
     const ww = wrapper.clientWidth;
     if (window.innerWidth > 600) {
       iframe.style.transform = "none";
       container.style.width = "552px";
-      container.style.height = "1100px";
+      container.style.height = IFRAME_H + "px";
       container.style.left = "-2px";
-      wrapper.style.height = "678px";
+      wrapper.style.height = DESKTOP_CROP_H + "px";
     } else {
-      const scale = ww / 552;
-      const scaledH = Math.round(1100 * scale);
+      const scale = ww / IFRAME_W;
+      const scaledFullH = Math.round(IFRAME_H * scale);
+      const scaledCropH = Math.round(IFRAME_H * MOBILE_CROP_RATIO * scale);
       iframe.style.transform = "scale(" + scale + ")";
       container.style.width = ww + "px";
-      container.style.height = scaledH + "px";
+      container.style.height = scaledFullH + "px";
       container.style.left = "0";
-      wrapper.style.height = scaledH + "px";
+      wrapper.style.height = scaledCropH + "px";
     }
   }
 
