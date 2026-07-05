@@ -14,13 +14,14 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Electrical engineering PhD candidate in
-[Yi Wang's](https://radiology.weill.cornell.edu/research/mri-research-institute-mriri/yi-wang-laboratory)
-lab at [Cornell University](https://www.ece.cornell.edu/ece) exploring
-quantitative magnetic resonance imaging.
+Postdoc at [Massachusetts General Hospital](https://www.massgeneral.org/imaging) and [Harvard Medical School](https://hms.harvard.edu) exploring neuroimaging models with the [LEMoN Lab](https://lemon.martinos.org) and [Martinos Center for Biomedical Imaging
+](https://www.martinos.org).
+
 
 Contact: <br>
-[MRI Research Institute](https://radiology.weill.cornell.edu/research/mri-research-institute-mriri)
-<br> [Weill Cornell Medicine](https://research.weill.cornell.edu/)
-<br> 407 East 61st Street <br> New York, NY 10065
+[Laboratory for Ex vivo Modeling of Neuroanatomy](https://lemon.martinos.org)
+<br> [Martinos Center for Biomedical Imaging
+](https://www.martinos.org)
+<br> 149 Thirteenth Street
+<br> Charlestown, Massachusetts 02129
 <br>
