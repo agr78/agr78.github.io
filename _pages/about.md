@@ -14,7 +14,7 @@ selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 ---
 
-Postdoc at [Massachusetts General Hospital](https://www.massgeneral.org/imaging) and [Harvard Medical School](https://hms.harvard.edu) exploring neuroimaging models with the [LEMoN Lab](https://lemon.martinos.org).
+Postdoc at [Massachusetts General Hospital](https://www.massgeneral.org/imaging) and [Harvard Medical School](https://hms.harvard.edu) exploring neuroimaging models with the [LEMoN group](https://lemon.martinos.org).
 
 Contact: <br>
 [Martinos Center for Biomedical Imaging](https://www.martinos.org)
