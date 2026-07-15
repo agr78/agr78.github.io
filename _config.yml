@@ -8,10 +8,10 @@ middle_name: G.
 last_name: Roberts
 contact_note: >
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  "PhD Candidate in Electrical and Computer Engineering at Cornell University"
-job_title: "PhD Candidate in Electrical and Computer Engineering at Cornell University"
+  "Postdoctoral Fellow at Harvard Medical School and Massachusetts General Hospital"
+job_title: "Postdoctoral Fellow at Harvard Medical School and Massachusetts General Hospital"
 affiliation: "Cornell University"
-works_for: "Cornell University"
+works_for: "Harvard University"
 same_as: 
   - "https://scholar.google.com/citations?user=zH_SGikAAAAJ&hl"
   - "https://orcid.org/0000-0002-4000-2102"
@@ -27,6 +27,8 @@ same_as:
   - "https://loop.frontiersin.org/people/3172472"
   - "https://www.semanticscholar.org/author/AG-Roberts/2204664244"
   - "https://lemon.martinos.org/team/"
+  - "https://connects.catalyst.harvard.edu/Profiles/display/Person/228660"
+  - "https://sciprofiles.com/profile/alexandragroberts"
 knows_about: 
  - "Medical Image Analysis"
  - "Machine Learning"
