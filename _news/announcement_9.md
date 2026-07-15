@@ -37,7 +37,7 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; }
   const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
   const isChromeOrFirefoxOniOS = /CriOS|FxiOS/.test(ua);
   const isMobileSafari = isIOS && !isChromeOrFirefoxOniOS;
-  const MOBILE_CROP_RATIO = isMobileSafari ? 0.96 : 0.98;
+  const MOBILE_CROP_RATIO = isMobileSafari ? 0.98 : 0.98;
   function adjust9() {
     const ww = wrapper.clientWidth;
     if (window.innerWidth > 600) {
