@@ -82,7 +82,7 @@
   iframe.src = "https://www.linkedin.com/embed/feed/update/urn:li:share:7480949423028719616";
   iframe.setAttribute('scrolling', 'no');
   iframe.style.width = "504px";
-  iframe.style.height = "493px";
+  iframe.style.height = "620px";
   iframe.style.border = "none";
   iframe.style.display = "block";
   iframe.style.position = "absolute";
@@ -91,22 +91,25 @@
   iframe.style.transformOrigin = "top left";
   container.appendChild(iframe);
   const IFRAME_W = 504;
-  const IFRAME_H = 493;
+  const IFRAME_H = 620; // was 493: too short for iOS to lay the card out in full
   const RIGHT_TRIM_PX = 4;
   const DESKTOP_TARGET_W = 548; // matches card 8's rendered width
-  const DESKTOP_CROP_RATIO = 0.95; // TUNE ME after previewing — trims content below the fold
+  // Card height in iframe px. Absolute rather than a ratio of IFRAME_H so
+  // the frame can be made taller without moving the crop.
+  const DESKTOP_CONTENT_H = 468;
   const ua = navigator.userAgent;
   const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
   // Every browser on iOS is WebKit (Apple requires it), so Firefox and
   // Chrome there lay out exactly like Safari and need the same ratio.
   const isIOSWebKit = isIOS;
-  const MOBILE_CROP_RATIO = isIOSWebKit ? 0.98 : 0.98;
+  // iOS lays the card out ~18% taller, in line with cards 7, 8 and 10.
+  const MOBILE_CONTENT_H = isIOSWebKit ? 552 : 483;
   function adjust9() {
     const ww = wrapper.clientWidth;
     if (window.innerWidth > 600) {
       const scale = DESKTOP_TARGET_W / (IFRAME_W - RIGHT_TRIM_PX);
       const scaledFullH = Math.round(IFRAME_H * scale);
-      const scaledCropH = Math.round(IFRAME_H * DESKTOP_CROP_RATIO * scale);
+      const scaledCropH = Math.round(DESKTOP_CONTENT_H * scale);
       iframe.style.transform = "scale(" + scale + ")";
       container.style.width = DESKTOP_TARGET_W + "px";
       container.style.height = scaledFullH + "px";
@@ -115,7 +118,7 @@
     } else {
       const scale = ww / (IFRAME_W - RIGHT_TRIM_PX);
       const scaledFullH = Math.round(IFRAME_H * scale);
-      const scaledCropH = Math.round(IFRAME_H * MOBILE_CROP_RATIO * scale);
+      const scaledCropH = Math.round(MOBILE_CONTENT_H * scale);
       iframe.style.transform = "scale(" + scale + ")";
       container.style.width = ww + "px";
       container.style.height = scaledFullH + "px";
