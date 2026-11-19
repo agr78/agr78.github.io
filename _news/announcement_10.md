@@ -48,7 +48,7 @@ html[data-theme="dark"] #news-card-wrapper-10 {
   // Chrome there lay out exactly like Safari and need the same ratio.
   const isIOSWebKit = isIOS;
 
-  const MOBILE_CROP_RATIO = isIOSWebKit ? 0.92 : 0.812;
+  const MOBILE_CROP_RATIO = isIOSWebKit ? 0.96 : 0.812;
 
   function adjust10() {
     const ww = wrapper.clientWidth;
