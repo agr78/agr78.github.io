@@ -6,8 +6,19 @@ related_posts: false
 ---
 <style>
 html, body { overflow-x: hidden !important; max-width: 100vw !important; }
+/* LinkedIn renders this embed light or dark itself, inside the iframe.
+   Which one varies by browser (dark in Safari, light in Brave on the
+   same device) and we can't drive it from here. So keep the chrome on
+   the site's own theme tokens: the frame always matches the page. */
+#news-card-wrapper-mar25 {
+  border: 1px solid var(--global-divider-color, #333);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+html[data-theme="dark"] #news-card-wrapper-mar25 {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
 </style>
-<div id="news-card-wrapper-mar25" style="width: 100%; max-width: 548px; margin: 2rem auto; background: transparent; overflow: hidden; border-radius: 8px; border: 1px solid #333; box-shadow: 0 4px 12px rgba(0,0,0,0.3); box-sizing: border-box; clear: both;"></div>
+<div id="news-card-wrapper-mar25" style="width: 100%; max-width: 548px; margin: 2rem auto; background: transparent; overflow: hidden; border-radius: 8px; box-sizing: border-box; clear: both;"></div>
 <script>
 (function() {
   const wrapper = document.getElementById('news-card-wrapper-mar25');
@@ -28,14 +39,13 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; }
   const IFRAME_H = 1100;
   const DESKTOP_CROP_H = 678;
 
-  // Detect real mobile Safari (iOS WebKit), excluding Chrome/Firefox on iOS
-  // which report Safari-like UA strings but identify via CriOS/FxiOS.
   const ua = navigator.userAgent;
   const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
-  const isChromeOrFirefoxOniOS = /CriOS|FxiOS/.test(ua);
-  const isMobileSafari = isIOS && !isChromeOrFirefoxOniOS;
+  // Every browser on iOS is WebKit (Apple requires it), so Firefox and
+  // Chrome there lay out exactly like Safari and need the same ratio.
+  const isIOSWebKit = isIOS;
 
-  const MOBILE_CROP_RATIO = isMobileSafari ? 0.69 : 0.615;
+  const MOBILE_CROP_RATIO = isIOSWebKit ? 0.69 : 0.615;
 
   function adjust7() {
     const ww = wrapper.clientWidth;

@@ -6,8 +6,19 @@ related_posts: false
 ---
 <style>
 html, body { overflow-x: hidden !important; max-width: 100vw !important; }
+/* LinkedIn renders this embed light or dark itself, inside the iframe.
+   Which one varies by browser (dark in Safari, light in Brave on the
+   same device) and we can't drive it from here. So keep the chrome on
+   the site's own theme tokens: the frame always matches the page. */
+#news-card-wrapper-9 {
+  border: 1px solid var(--global-divider-color, #333);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+html[data-theme="dark"] #news-card-wrapper-9 {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
 </style>
-<div id="news-card-wrapper-9" style="width: 100%; max-width: 548px; margin: 2rem auto; background: transparent; overflow: hidden; border-radius: 8px; border: 1px solid #333; box-shadow: 0 4px 12px rgba(0,0,0,0.3); box-sizing: border-box; clear: both;"></div>
+<div id="news-card-wrapper-9" style="width: 100%; max-width: 548px; margin: 2rem auto; background: transparent; overflow: hidden; border-radius: 8px; box-sizing: border-box; clear: both;"></div>
 <script>
 (function() {
   const wrapper = document.getElementById('news-card-wrapper-9');
@@ -32,12 +43,12 @@ html, body { overflow-x: hidden !important; max-width: 100vw !important; }
   const RIGHT_TRIM_PX = 4;
   const DESKTOP_TARGET_W = 548; // matches card 8's rendered width
   const DESKTOP_CROP_RATIO = 0.95; // TUNE ME after previewing — trims content below the fold
-  // Detect real mobile Safari (iOS WebKit), excluding Chrome/Firefox on iOS
   const ua = navigator.userAgent;
   const isIOS = /iPad|iPhone|iPod/.test(ua) && !window.MSStream;
-  const isChromeOrFirefoxOniOS = /CriOS|FxiOS/.test(ua);
-  const isMobileSafari = isIOS && !isChromeOrFirefoxOniOS;
-  const MOBILE_CROP_RATIO = isMobileSafari ? 0.98 : 0.98;
+  // Every browser on iOS is WebKit (Apple requires it), so Firefox and
+  // Chrome there lay out exactly like Safari and need the same ratio.
+  const isIOSWebKit = isIOS;
+  const MOBILE_CROP_RATIO = isIOSWebKit ? 0.98 : 0.98;
   function adjust9() {
     const ww = wrapper.clientWidth;
     if (window.innerWidth > 600) {

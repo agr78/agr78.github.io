@@ -21,7 +21,7 @@ related_posts: false
 
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 --->
-<div id="tweet-container" style="max-width: 547px; margin: 2rem auto; min-height: 450px;">
+<div id="tweet-container" style="max-width: 547px; margin: 2rem auto;">
   </div>
 
 <script>
@@ -37,10 +37,18 @@ related_posts: false
 
     const container = document.getElementById('tweet-container');
     
-    // Clear and Re-inject the blockquote with the correct theme
+    // Clear and Re-inject the blockquote with the correct theme.
+    // The text below is the fallback: Firefox and Brave block
+    // platform.twitter.com, and without it readers get an empty box.
+    // widgets.js replaces the whole blockquote when it does load.
     container.innerHTML = `
       <blockquote class="twitter-tweet" data-theme="${isDark ? 'dark' : 'light'}">
-        <a href="https://twitter.com/opencvlive/status/1991535528739762456"></a>
+        <p>On today&rsquo;s OpenCV live stream we&rsquo;re exploring ML and deep learning in CT,
+        PET, and MRI, covering reconstruction, detection, and segmentation, while
+        highlighting model interpretability, strategies for handling label noise, and
+        methods for reducing bias in medical imaging workflows</p>
+        &mdash; OpenCV Live (@opencvlive)
+        <a href="https://twitter.com/opencvlive/status/1991535528739762456">November 20, 2025</a>
       </blockquote>`;
 
     // Re-run the Twitter widget factory
